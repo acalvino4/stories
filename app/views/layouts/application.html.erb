@@ -2,14 +2,43 @@
 <html>
   <head>
     <title>Stories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/da5a115199.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <script>
+      function closeMenu() {
+        document.getElementById('menu').style.left = '-240px';
+      }
 
+      function openMenu() {
+        document.getElementById('menu').style.left = 0;
+      }
+    </script>
+  </head>
   <body>
-    <%= yield %>
+    <header>
+
+    </header>
+    <main>
+      <i id='bars' class="fas fa-bars fa-2x icon bars" onclick="openMenu()"></i>
+      <div id="menu" style="left: -240px;">
+        <ul>
+          <li><%= link_to "Home" , '/home' %></li>
+          <li><%= link_to "About" , '/about' %></li>
+          <li><%= link_to "Contact" , '/contact' %></li>
+        </ul>
+        <i id='times' class="fas fa-times fa-2x icon times" onclick="closeMenu()"></i>
+      </div>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="container">
+        <p>A Ruby Project</p>
+      </div>
+    </footer>
   </body>
 </html>
