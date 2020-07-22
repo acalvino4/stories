@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home'
   get '/about' => 'pages#about'
   get '/thanks' => 'pages#thanks'
+  get '/contact' => 'signups#new'
 
   resources :signups
 

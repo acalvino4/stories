@@ -1,3 +1,31 @@
 // Place all the styles related to the Signups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.contact-main, .thanks-main {
+    background: image-url('forest.jpg') no-repeat center center;
+    background-size: cover;
+    height: 700px; 
+}
+
+form {
+    text-align: left;
+}
+
+.form-group {
+
+    label {
+        font-size: 16px;
+        color: #fff;
+    }
+
+    input {
+        padding: 20px 10px;
+        font-size: 20px;
+    }
+}
+
+.form-control, .btn-default {
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 0;
+}
